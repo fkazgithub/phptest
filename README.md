@@ -1,1 +1,1 @@
-# phptest
+よくあるphpの課題
