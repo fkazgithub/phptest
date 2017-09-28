@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,8 +15,6 @@
  $time = date('Y年m月d日 H時i分s秒');
  $datafile='sample2_2.txt';
  $num = sizeof(file($datafile))+1;
- $com2 = $_POST["comment2"];
- $str2 = $_POST["name2"];
 
  if (isset($_POST['sent'])){ 
  
@@ -23,16 +22,6 @@
  fclose($fp);
  }
    ?>
-
-
-   <?php
-
- if (isset($_POST['sent2'])){ 
- 
- fwrite($fp,$num."<>".$str2."<>".$com2."<>".$time."\n");
- fclose($fp);
- }
- ?>
 
 <form action="" method="post">
   名前：<br/>
@@ -50,14 +39,6 @@
 </form>
 
 
-<form action="kadai2_5_edit" method="post">
-編集対象番号:<br>
-<input type="number" name="edino" value="" /><br/>
-<input type="submit" name="edit" value="編集"> 
-</form>
-
-
-
 <?php
 
 if (isset($_POST['delete'])){ //削除
@@ -69,15 +50,12 @@ if($line[0] == $_POST['delno']){
 $file   = file('sample2_2.txt');
 unset($file[$i]);
 file_put_contents('sample2_2.txt', $file);
-	
+  
 }
 
 }
       
 }
-
-
- 
 
 
 
@@ -89,10 +67,11 @@ $file_name = "sample2_2.txt";
  }
 
 
-
-
-
 ?>
+
+
+
+
 
 </body>
 </html>
